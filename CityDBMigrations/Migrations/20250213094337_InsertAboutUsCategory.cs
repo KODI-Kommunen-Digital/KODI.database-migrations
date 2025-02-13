@@ -10,14 +10,14 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"INSERT INTO categories (id, name)
                 VALUES 
-                    (46, 'Über Uns');
+                    (47, 'Über Uns');
                 INSERT INTO subcategory (id, name, categoryId)
                 VALUES
-                    (16, 'Ansprechpartner', 46),
-                    (17, 'Projekte', 46),
-                    (18, 'Events', 46),
-                    (19, 'Gesellschafter', 46),
-                    (20, 'Aufsichtsrat', 46);
+                    (16, 'Ansprechpartner', 47),
+                    (17, 'Projekte', 47),
+                    (18, 'Events', 47),
+                    (19, 'Gesellschafter', 47),
+                    (20, 'Aufsichtsrat', 47);
                 ";
 
             Execute.Sql(sql);
@@ -28,7 +28,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"
                 DELETE FROM subcategory WHERE id IN (16, 17, 18, 19, 20);
-                DELETE FROM categories WHERE id IN (46);
+                DELETE FROM categories WHERE id IN (47);
                 ";
             Execute.Sql(sql);
         }
