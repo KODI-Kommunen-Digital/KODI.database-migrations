@@ -28,7 +28,6 @@ namespace DatabaseMigrations.Migrations
                         DELETE FROM user_preference_categories upcat WHERE upcat.userId = userId;
                         DELETE FROM firebase_token ft WHERE ft.userId = userId;
 		                DELETE FROM favorites f WHERE f.userId = userId;
-                        DELETE FROM bookings b WHERE b.userId = userId;
                         DELETE FROM notification noti WHERE noti.userId = userId;
                         DELETE FROM user_keys uk WHERE uk.userId = userId;
                         DELETE FROM addresses add WHERE add.userId = userId;
