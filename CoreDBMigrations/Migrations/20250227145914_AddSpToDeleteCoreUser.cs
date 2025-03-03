@@ -30,7 +30,7 @@ namespace DatabaseMigrations.Migrations
 		                DELETE FROM favorites f WHERE f.userId = userId;
                         DELETE FROM notification noti WHERE noti.userId = userId;
                         DELETE FROM user_keys uk WHERE uk.userId = userId;
-                        DELETE FROM addresses add WHERE add.userId = userId;
+                        DELETE FROM addresses addr WHERE addr.userId = userId;
                         DELETE FROM defect_reports dr WHERE dr.userId = userId;
 
 		                DELETE FROM users u WHERE u.id = userId;
