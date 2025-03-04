@@ -2,8 +2,8 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20240229095934)]
-    public class AddAddSpToDeleteCoreUser : Migration
+    [Migration(20250227145930)]
+    public class AddSpToDeleteCoreUser : Migration
     {
         public override void Up()
         {
@@ -24,7 +24,11 @@ namespace DatabaseMigrations.Migrations
 		                DELETE FROM refreshtokens rt WHERE rt.userId = userId;
 		                DELETE FROM forgot_password_tokens fpt WHERE fpt.userId = userId;
 		                DELETE FROM verification_tokens vt WHERE vt.userId = userId;
+                        DELETE FROM firebase_token ft WHERE ft.userId = userId;
 		                DELETE FROM favorites f WHERE f.userId = userId;
+                        DELETE FROM notification noti WHERE noti.userId = userId;
+                        DELETE FROM user_keys uk WHERE uk.userId = userId;
+
 		                DELETE FROM users u WHERE u.id = userId;
 
                         SET SQL_SAFE_UPDATES = 1;
