@@ -2,15 +2,15 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20250227145914)]
-    public class AddAddSpToDeleteCoreUser : Migration
+    [Migration(20250227145920)]
+    public class AddSpToDeleteCoreUser : Migration
     {
         public override void Up()
         {
             string sql =
                @"
-                DROP PROCEDURE IF EXISTS sp_DeleteCoreUser_v2;
-                CREATE PROCEDURE sp_DeleteCoreUser_v2 (IN userId int) 
+                DROP PROCEDURE IF EXISTS sp_DeleteCoreUser;
+                CREATE PROCEDURE sp_DeleteCoreUser (IN userId int) 
                 BEGIN
                     DECLARE EXIT HANDLER FOR SQLEXCEPTION 
                         BEGIN
@@ -45,7 +45,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-                @"DROP PROCEDURE IF EXISTS sp_DeleteCoreUser_v2;";
+                @"DROP PROCEDURE IF EXISTS sp_DeleteCoreUser;";
 
             Execute.Sql(sql);
         }
