@@ -2,8 +2,8 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20250227145914)]
-    public class AddAddSpToDeleteCoreUser : Migration
+    [Migration(20250227145920)]
+    public class AddSpToDeleteCoreUser : Migration
     {
         public override void Up()
         {
@@ -30,7 +30,7 @@ namespace DatabaseMigrations.Migrations
 		                DELETE FROM favorites f WHERE f.userId = userId;
                         DELETE FROM notification noti WHERE noti.userId = userId;
                         DELETE FROM user_keys uk WHERE uk.userId = userId;
-                        DELETE FROM addresses add WHERE add.userId = userId;
+                        DELETE FROM addresses addr WHERE addr.userId = userId;
                         DELETE FROM defect_reports dr WHERE dr.userId = userId;
 
 		                DELETE FROM users u WHERE u.id = userId;
