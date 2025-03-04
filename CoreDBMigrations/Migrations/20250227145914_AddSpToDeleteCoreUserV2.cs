@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20250227145914)]
-    public class AddAddSpToDeleteCoreUser : Migration
+    public class AddAddSpToDeleteCoreUserV2 : Migration
     {
         public override void Up()
         {
