@@ -9,8 +9,8 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"
-                DROP PROCEDURE IF EXISTS sp_DeleteCoreUser;
-                CREATE PROCEDURE sp_DeleteCoreUser (IN userId int) 
+                DROP PROCEDURE IF EXISTS sp_DeleteCoreUser_v2;
+                CREATE PROCEDURE sp_DeleteCoreUser_v2 (IN userId int) 
                 BEGIN
                     DECLARE EXIT HANDLER FOR SQLEXCEPTION 
                         BEGIN
