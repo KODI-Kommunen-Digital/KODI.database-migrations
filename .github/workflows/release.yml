@@ -16,7 +16,24 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: ["waldi", "smartregionauf", "ratingen"]
+        project:
+          [
+            "waldi",
+            "smartregionauf",
+            "geseke",
+            "ratingen",
+            "hivada",
+            "coburg",
+            "salzkotten",
+            "troisdorf",
+            "wunsiedel",
+            "hasslachtalMitwitz",
+            "hasslachtalPressig",
+            "hasslachtalSchneckenlohe",
+            "hasslachtalStockheim",
+            "einbeck",
+          ]
+      fail-fast: false
 
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +42,7 @@ jobs:
         id: set-projects
         run: |
           if [[ "${{ github.event.inputs.projects }}" == "all" ]]; then
-            echo "ALL_PROJECTS=waldi,smartregionauf,ratingen" >> $GITHUB_ENV
+            echo "ALL_PROJECTS=waldi,smartregionauf,ratingen,geseke,hivada,coburg,salzkotten,troisdorf,wunsiedel,hasslachtalMitwitz,hasslachtalPressig,hasslachtalSchneckenlohe,hasslachtalStockheim,einbeck" >> $GITHUB_ENV
           else
             echo "ALL_PROJECTS=${{ github.event.inputs.projects }}" >> $GITHUB_ENV
           fi
@@ -38,41 +55,114 @@ jobs:
             echo "HOST=${{ secrets.WALDI_HOST_NAME }}" >> $GITHUB_ENV
             echo "USERNAME=${{ secrets.WALDI_USERNAME }}" >> $GITHUB_ENV
             echo "PASSWORD=${{ secrets.WALDI_PASSWORD }}" >> $GITHUB_ENV
-            echo "APPDIR=${{ secrets.WALDI_APPDIR }}/Frontend" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.WALDI_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "smartregionauf" ]]; then
             echo "HOST=${{ secrets.SMART_HOST_NAME }}" >> $GITHUB_ENV
             echo "USERNAME=${{ secrets.SMART_USERNAME }}" >> $GITHUB_ENV
             echo "PASSWORD=${{ secrets.SMART_PASSWORD }}" >> $GITHUB_ENV
-            echo "APPDIR=${{ secrets.SMART_APPDIR }}/Frontend" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.SMART_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "ratingen" ]]; then
             echo "HOST=${{ secrets.RATINGEN_HOST_NAME }}" >> $GITHUB_ENV
             echo "USERNAME=${{ secrets.RATINGEN_USERNAME }}" >> $GITHUB_ENV
             echo "PASSWORD=${{ secrets.RATINGEN_PASSWORD }}" >> $GITHUB_ENV
-            echo "APPDIR=${{ secrets.RATINGEN_APPDIR }}/Frontend" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.RATINGEN_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "geseke" ]]; then
+            echo "HOST=${{ secrets.GESEKE_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.GESEKE_USERNAME }}" >> $GITHUB_ENV
+            echo "SSHKEY=${{ secrets.GESEKE_SSHKEY }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.GESEKE_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "hivada" ]]; then
+            echo "HOST=${{ secrets.HIVADA_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HIVADA_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HIVADA_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.HIVADA_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "coburg" ]]; then
+            echo "HOST=${{ secrets.COBURG_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.COBURG_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.COBURG_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.COBURG_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "salzkotten" ]]; then
+            echo "HOST=${{ secrets.SALZKOTTEN_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.SALZKOTTEN_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.SALZKOTTEN_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.SALZKOTTEN_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "troisdorf" ]]; then
+            echo "HOST=${{ secrets.TROISDORF_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.TROISDORF_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.TROISDORF_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.TROISDORF_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "wunsiedel" ]]; then
+            echo "HOST=${{ secrets.WUNSIEDEL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.WUNSIEDEL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.WUNSIEDEL_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.WUNSIEDEL_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "hasslachtalMitwitz" ]]; then
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.MITWITZ_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "hasslachtalPressig" ]]; then
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.PRESSIG_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "hasslachtalSchneckenlohe" ]]; then
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.SCHNECKENLOHE_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "hasslachtalStockheim" ]]; then
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.STOCKHEIM_APPDIR }}" >> $GITHUB_ENV
+          elif [[ "${{ matrix.project }}" == "einbeck" ]]; then
+            echo "HOST=${{ secrets.EINBECK_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.EINBECK_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.EINBECK_PASSWORD }}" >> $GITHUB_ENV
+            echo "APPDIR=${{ secrets.EINBECK_APPDIR }}" >> $GITHUB_ENV
           fi
 
-      - name: Copy files via SSH
+      - name: Run migrations 
         if: contains(env.ALL_PROJECTS, matrix.project)
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ env.HOST }}
-          username: ${{ env.USERNAME }}
-          password: ${{ env.PASSWORD || '' }}
-          key: ${{ env.SSHKEY || '' }}
-          source: "*"
-          target: ${{ env.APPDIR }}
-
-      - name: SSH to Server and run commands
-        if: contains(env.ALL_PROJECTS, matrix.project)
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ env.HOST }}
           username: ${{ env.USERNAME }}
           password: ${{ env.PASSWORD || '' }}
           key: ${{ env.SSHKEY || '' }}
           script: |
-            cd ${{ env.APPDIR }}
-            npm install --production
-            npm run lint .
-            npm run build
-            pm2 restart WEB
+            cd ${{ env.APPDIR }}/DbMigrations/DatabaseMigrations
+
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/githubNew
+
+            git checkout -f main || { echo "Git checkout failed"; exit 1; }
+            git reset --hard
+            git pull || { echo "Git pull failed"; exit 1; }
+
+            dbType=${{ github.event.inputs.dbType }}
+            migrate=${{ github.event.inputs.migrate }}
+            targetVersion=${{ github.event.inputs.targetVersion }}
+
+            if [ -z "$dbType" ]; then
+              dbType="all"
+            fi
+
+            if [ -z "$migrate" ]; then
+              migrate="up"
+            fi
+
+            if [ -z "$targetVersion" ]; then
+              runCommand="dotnet run dbType=$dbType migrate=$migrate"
+            else
+              runCommand="dotnet run dbType=$dbType migrate=$migrate targetVersion=$targetVersion"
+            fi
+
+            # Log the command
+            echo "Running command: $runCommand"
+
+            # Run the command
+            dotnet clean
+            dotnet build || { echo "Build failed"; exit 1; }
+            $runCommand || { echo "Migration command failed"; exit 1; }
