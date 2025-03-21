@@ -11,7 +11,7 @@ namespace CoreDBMigrations.Migrations
                @"
                 INSERT INTO subcategory (id, name, categoryId)
                 VALUES
-                    (21, 'Aufsichtsrat', 45);
+                    (21, 'Weitere', 45);
                 ";
 
             Execute.Sql(sql);
