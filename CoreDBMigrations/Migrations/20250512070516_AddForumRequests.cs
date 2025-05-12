@@ -9,7 +9,7 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"DROP TABLE IF EXISTS forum_requests;
-                CREATE TABLE forumrequests (
+                CREATE TABLE forum_requests (
                 id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     forumId int, 
                     FOREIGN KEY(forumId) REFERENCES forums(id),    

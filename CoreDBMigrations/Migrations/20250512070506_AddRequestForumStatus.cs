@@ -9,11 +9,11 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"DROP TABLE IF EXISTS forum_status;
-                CREATE TABLE forumstatus (
+                CREATE TABLE forum_status (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     name varchar(255)
                 );
-                insert into forumstatus values (1,""Pending""), (2,""Accepted""), (3,""Rejected"");";
+                insert into forum_status values (1,""Pending""), (2,""Accepted""), (3,""Rejected"");";
             Execute.Sql(sql);
         }
 
