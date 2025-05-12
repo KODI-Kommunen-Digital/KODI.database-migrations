@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS forumstatus;
+               @"DROP TABLE IF EXISTS forum_status;
                 CREATE TABLE forumstatus (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     name varchar(255)
@@ -20,7 +20,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS forumstatus;";
+               @"DROP TABLE IF EXISTS forum_status;";
 
             Execute.Sql(sql);
         }
