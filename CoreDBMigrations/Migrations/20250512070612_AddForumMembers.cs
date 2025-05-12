@@ -12,11 +12,11 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE forum_members (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
                     forumId int, 
-                    FOREIGN KEY(forumId) REFERENCES forums(id),    
                     userId int, 
-                    FOREIGN KEY(userId) REFERENCES users(id),
                     JoinedAt DATETIME,
-                    isAdmin BOOLEAN
+                    isAdmin BOOLEAN,
+                    FOREIGN KEY(forumId) REFERENCES forums(id),    
+                    FOREIGN KEY(userId) REFERENCES users(id)
                 );";
             Execute.Sql(sql);
         }

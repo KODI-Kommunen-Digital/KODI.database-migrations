@@ -12,8 +12,8 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE forum_cities(
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     forumId int, 
-                    FOREIGN KEY(forumId) REFERENCES forums(id),    
                     cityId int, 
+                    FOREIGN KEY(forumId) REFERENCES forums(id),   
                     FOREIGN KEY(cityId) REFERENCES cities(id)                    
                 );";
             Execute.Sql(sql);

@@ -12,12 +12,12 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE post_reports (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     forumId int, 
-                    FOREIGN KEY(forumId) REFERENCES forums(id),  
                     postId int, 
-                    FOREIGN KEY(postId) REFERENCES forum_posts(id),  
                     userId int, 
+                    createdAt DATETIME,
+                    FOREIGN KEY(forumId) REFERENCES forums(id),  
                     FOREIGN KEY(userId) REFERENCES users(id),
-                    createdAt DATETIME
+                    FOREIGN KEY(postId) REFERENCES forum_posts(id)
                 );";
             Execute.Sql(sql);
         }

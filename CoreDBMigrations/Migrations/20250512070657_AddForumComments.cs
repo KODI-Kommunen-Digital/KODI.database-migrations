@@ -12,14 +12,14 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE forum_comments (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     forumId int, 
-                    FOREIGN KEY(forumId) REFERENCES forums(id),  
                     postId int, 
-                    FOREIGN KEY(postId) REFERENCES forum_posts(id),  
                     userId int, 
-                    FOREIGN KEY(userId) REFERENCES users(id),
                     comment varchar(1000),
                     createdAt DATETIME,
                     parentId int,
+                    FOREIGN KEY(postId) REFERENCES forum_posts(id),  
+                    FOREIGN KEY(userId) REFERENCES users(id),
+                    FOREIGN KEY(forumId) REFERENCES forums(id),  
                     FOREIGN KEY(parentId) REFERENCES forum_comments(id)
                 );";
             Execute.Sql(sql);
