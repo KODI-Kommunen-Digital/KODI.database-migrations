@@ -10,7 +10,6 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS forum_cities;
                 CREATE TABLE forum_cities(
-                    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     forumId int, 
                     cityId int, 
                     FOREIGN KEY(forumId) REFERENCES forums(id),   

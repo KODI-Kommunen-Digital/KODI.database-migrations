@@ -13,7 +13,7 @@ namespace DatabaseMigrations.Migrations
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     name varchar(255)
                 );
-                insert into forum_status values (1,""Pending""), (2,""Accepted""), (3,""Rejected"");";
+                insert into forum_status values (1,""Pending""), (2,""Accepted""), (3,""Rejected""),(4,""Feedback"");";
             Execute.Sql(sql);
         }
 
