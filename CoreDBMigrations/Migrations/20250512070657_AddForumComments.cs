@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20250512070657)]
-    public class AddForumComments: Migration
+    public class AddForumCommentsTable: Migration
     {
         public override void Up()
         {
