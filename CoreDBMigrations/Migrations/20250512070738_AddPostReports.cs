@@ -14,6 +14,7 @@ namespace DatabaseMigrations.Migrations
                     forumId int, 
                     postId int, 
                     userId int, 
+                    Reason varchar(255),
                     createdAt DATETIME,
                     FOREIGN KEY(forumId) REFERENCES forums(id),  
                     FOREIGN KEY(userId) REFERENCES users(id),
