@@ -15,9 +15,11 @@ namespace DatabaseMigrations.Migrations
                     title varchar(255),
                     description varchar(10000),
                     userId int, 
+                    statusId int,
                     image varchar(255),
                     createdAt DATETIME,
                     isHidden tinyint(1),
+                    FOREIGN KEY(statusId) REFERENCES status(id),  
                     FOREIGN KEY(forumId) REFERENCES forums(id),    
                     FOREIGN KEY(userId) REFERENCES users(id)
                 );";
