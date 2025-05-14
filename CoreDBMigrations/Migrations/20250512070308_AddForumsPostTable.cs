@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                     userId int, 
                     image varchar(255),
                     createdAt DATETIME,
-                    status ENUM('Pending', 'Approved', 'Feedback')
+                    status ENUM('Pending', 'Approved', 'Feedback'),
                     isHidden tinyint(1),
                     FOREIGN KEY(forumId) REFERENCES forums(id),    
                     FOREIGN KEY(userId) REFERENCES users(id)
