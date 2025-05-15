@@ -14,7 +14,6 @@ namespace DatabaseMigrations.Migrations
                     postId INT NOT NULL,
                     senderId INT NOT NULL,
                     message TEXT NOT NULL,
-                    role ENUM('admin', 'creator') NOT NULL,
                     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
                     PRIMARY KEY (id),
                     FOREIGN KEY (postId) REFERENCES forum_posts(id) ,
