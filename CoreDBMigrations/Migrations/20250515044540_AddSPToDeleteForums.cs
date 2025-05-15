@@ -30,6 +30,7 @@ namespace DatabaseMigrations.Migrations
                         DELETE FROM forum_posts fp where fp.forumId = forumId;
                         DELETE FROM forum_requests fr where fr.forumId = forumId;
                         DELETE FROM forum_members fm where fm.forumId = forumId;
+                        DELETE FROM forum_cities fci where fci.forumId = forumId;
                         DELETE FROM forums fs where fs.id = forumId;
                     COMMIT;
                 END;";
