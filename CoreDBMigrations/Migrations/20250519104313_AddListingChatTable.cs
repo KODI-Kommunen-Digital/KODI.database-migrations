@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS listing_chat;
-                CREATE TABLE IF NOT EXISTS listing_chat (
+               @"DROP TABLE IF EXISTS listing_chats;
+                CREATE TABLE IF NOT EXISTS listing_chats (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
                 listing_id INT NOT NULL,
                 sender_id INT NOT NULL,
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS listing_chat;";
+               @"DROP TABLE IF EXISTS listing_chats;";
 
             Execute.Sql(sql);
         }
