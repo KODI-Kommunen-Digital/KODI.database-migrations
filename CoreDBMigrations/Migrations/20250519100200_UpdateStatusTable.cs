@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(202305190001)]
+    [Migration(20250519100200)]
     public class UpdateStatusTable : Migration
     {
         public override void Up()
