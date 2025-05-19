@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20250519154500)]
+    [Migration(20250519154730)]
     public class CreateParkingTimingsTable : Migration
     {
         public override void Up()
