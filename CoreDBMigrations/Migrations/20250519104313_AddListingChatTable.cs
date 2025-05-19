@@ -11,13 +11,13 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS listing_chats;
                 CREATE TABLE IF NOT EXISTS listing_chats (
                 id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                listing_id INT NOT NULL,
-                sender_id INT NOT NULL,
-                sender_type ENUM('user', 'admin') NOT NULL,
+                listingId INT NOT NULL,
+                senderId INT NOT NULL,
+                senderType ENUM('user', 'admin') NOT NULL,
                 message TEXT NOT NULL,
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                FOREIGN KEY (listing_id) REFERENCES listings(id) ON DELETE CASCADE,
-                FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE
+                FOREIGN KEY (listingId) REFERENCES listings(id) ON DELETE CASCADE,
+                FOREIGN KEY (senderId) REFERENCES users(id) ON DELETE CASCADE
             );";
             Execute.Sql(sql);
         }
