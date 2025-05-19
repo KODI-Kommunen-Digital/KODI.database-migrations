@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                 message TEXT NOT NULL,
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (listing_id) REFERENCES listings(id) ON DELETE CASCADE,
-                FOREIGN KEY (listsender_iding_id) REFERENCES users(id) ON DELETE CASCADE,
+                FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE
             );";
             Execute.Sql(sql);
         }
