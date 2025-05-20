@@ -3,12 +3,12 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20250519153100)]
-    public class CreateCarParkListTableAndSeedData : Migration
+    public class CreateParkingSpacesTable : Migration
     {
         public override void Up()
         {
             Execute.Sql(@"
-                CREATE TABLE `carparklist` (
+                CREATE TABLE `parking_spaces` (
                     `id` varchar(100) NOT null PRIMARY KEY,
                     `name` varchar(100) DEFAULT NULL,
                     `address` varchar(200) DEFAULT NULL,
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             // Corrected table name
-            Execute.Sql("DROP TABLE IF EXISTS `carparklist`;");
+            Execute.Sql("DROP TABLE IF EXISTS `parking_spaces`;");
         }
     }
 }

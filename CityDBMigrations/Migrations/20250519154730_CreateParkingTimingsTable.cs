@@ -10,12 +10,12 @@ namespace DatabaseMigrations.Migrations
             Execute.Sql(@"
                 CREATE TABLE `parking_timings` (
                     `day` TINYINT NOT NULL,
-                    `parking_id` VARCHAR(100) NOT NULL,
+                    `parkingId` VARCHAR(100) NOT NULL,
                     `startTime` DATETIME DEFAULT NULL,
                     `endTime` DATETIME DEFAULT NULL,
-                    PRIMARY KEY (`parking_id`, `day`),
+                    PRIMARY KEY (`parkingId`, `day`),
                     CONSTRAINT `parking_timings_ibfk_1` 
-                        FOREIGN KEY (`parking_id`) REFERENCES `carparklist` (`id`) ON DELETE CASCADE,
+                        FOREIGN KEY (`parkingId`) REFERENCES `parking_spaces` (`id`) ON DELETE CASCADE,
                     CONSTRAINT `parking_timings_chk_1` 
                         CHECK ((`day` BETWEEN 0 AND 6))
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
