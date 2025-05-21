@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20250519104313)]
+    [Migration(20250520123145)]
     public class AddListingChatReactionTable : Migration
     {
         public override void Up()
