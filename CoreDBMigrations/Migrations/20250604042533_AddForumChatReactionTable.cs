@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 PRIMARY KEY (`id`),
                 UNIQUE KEY `unique_reaction_per_user` (`chatId`, `userId`),
-                FOREIGN KEY (`chatId`) REFERENCES `forum_chats` (`id`) ON DELETE CASCADE,
+                FOREIGN KEY (`chatId`) REFERENCES `forum_chat` (`id`) ON DELETE CASCADE,
                 FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);

@@ -11,7 +11,7 @@ namespace DatabaseMigrations.Migrations
                @"ALTER TABLE forum_chat
                 ADD COLUMN parentId BIGINT NULL,
                 ADD COLUMN fileUrl VARCHAR(255) NULL,
-                ADD FOREIGN KEY (parentId) REFERENCES forum_chats(id) ON DELETE CASCADE;";
+                ADD FOREIGN KEY (parentId) REFERENCES forum_chat(id) ON DELETE CASCADE;";
             Execute.Sql(sql);
         }
 
