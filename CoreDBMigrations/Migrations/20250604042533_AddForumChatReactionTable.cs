@@ -10,8 +10,8 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS forum_chat_reactions;
                 CREATE TABLE `forum_chat_reactions` (
-                id BIGINT NOT NULL AUTO_INCREMENT,
-                chatId BIGINT NOT NULL,
+                id INT NOT NULL AUTO_INCREMENT,
+                chatId INT NOT NULL,
                 userId INT NOT NULL,
                 reaction ENUM('like', 'dislike') NOT NULL,
                 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
