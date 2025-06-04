@@ -7,23 +7,23 @@ namespace DatabaseMigrations.Migrations
     {
         public override void Up()
         {
-            string sql =
-               @"ALTER TABLE forum_chat
-                ADD COLUMN parentId BIGINT NULL,
+            Execute.Sql(@"
+                ALTER TABLE forum_chat
+                ADD COLUMN parentId INT NULL,
                 ADD COLUMN fileUrl VARCHAR(255) NULL,
-                ADD FOREIGN KEY (parentId) REFERENCES forum_chat(id) ON DELETE CASCADE;";
-            Execute.Sql(sql);
+                ADD CONSTRAINT fk_forum_chat_parent FOREIGN KEY (parentId)
+                    REFERENCES forum_chat(id) ON DELETE CASCADE;
+            ");
         }
 
         public override void Down()
         {
-            string sql =
-               @"ALTER TABLE forum_chat
-                DROP FOREIGN KEY forum_chats_ibfk_2,
+            Execute.Sql(@"
+                ALTER TABLE forum_chat
+                DROP FOREIGN KEY fk_forum_chat_parent,
                 DROP COLUMN parentId,
-                DROP COLUMN fileUrl;";
-
-            Execute.Sql(sql);
+                DROP COLUMN fileUrl;
+            ");
         }
     }
-} 
+}
