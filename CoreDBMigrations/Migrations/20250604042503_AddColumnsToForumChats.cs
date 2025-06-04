@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE forum_chats
+               @"ALTER TABLE forum_chat
                 ADD COLUMN parentId BIGINT NULL,
                 ADD COLUMN fileUrl VARCHAR(255) NULL,
                 ADD FOREIGN KEY (parentId) REFERENCES forum_chats(id) ON DELETE CASCADE;";
@@ -18,7 +18,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE forum_chats
+               @"ALTER TABLE forum_chat
                 DROP FOREIGN KEY forum_chats_ibfk_2,
                 DROP COLUMN parentId,
                 DROP COLUMN fileUrl;";
