@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20231025163027)]
+    [Migration(20250620114031)]
     public class AddSPToDeleteForumMember : Migration
     {
         public override void Up()
