@@ -28,18 +28,18 @@ namespace DatabaseMigrations.Migrations
                         END;
                     START TRANSACTION;
                         SET SQL_SAFE_UPDATES = 0;
-		                DELETE FROM forumcomments fc where fc.forumId = forumId and fc.userId = userId and fc.parentId is not NULL;
-                        DELETE fc1 FROM forumcomments fc1 INNER JOIN forumcomments fc2 ON fc1.parentId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId;
-                        DELETE FROM forumcomments fc where fc.forumId = forumId and fc.userId = userId;
-                        DELETE FROM reportedposts rp where rp.forumId = forumId and rp.userId = userId;
-                        DELETE rp FROM reportedposts rp
-                        INNER JOIN forumposts fp ON rp.postId = fp.id
+		                DELETE FROM forum_comments fc where fc.forumId = forumId and fc.userId = userId and fc.parentId is not NULL;
+                        DELETE fc1 FROM forum_comments fc1 INNER JOIN forum_comments fc2 ON fc1.parentId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId;
+                        DELETE FROM forum_comments fc where fc.forumId = forumId and fc.userId = userId;
+                        DELETE FROM forum_post_reports rp where rp.forumId = forumId and rp.userId = userId;
+                        DELETE rp FROM forum_post_reports rp
+                        INNER JOIN forum_posts fp ON rp.postId = fp.id
                         WHERE fp.userId = userId;
-                        DELETE fc1 FROM forumcomments fc1 INNER JOIN forumposts fc2 ON fc1.postId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId and fc1.parentId IS NOT NULL;
-                        DELETE fc1 FROM forumcomments fc1 INNER JOIN forumposts fc2 ON fc1.postId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId;
-		                DELETE FROM forumposts fp where fp.forumId = forumId and fp.userId = userId;
-		                DELETE FROM forummembers fm where fm.forumId = forumId and fm.userId = userId;
-                        DELETE FROM forumrequests fr where fr.forumId = forumId and fr.userId = userId;
+                        DELETE fc1 FROM forum_comments fc1 INNER JOIN forum_posts fc2 ON fc1.postId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId and fc1.parentId IS NOT NULL;
+                        DELETE fc1 FROM forum_comments fc1 INNER JOIN forum_posts fc2 ON fc1.postId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId;
+		                DELETE FROM forum_posts fp where fp.forumId = forumId and fp.userId = userId;
+		                DELETE FROM forum_members fm where fm.forumId = forumId and fm.userId = userId;
+                        DELETE FROM forum_requests fr where fr.forumId = forumId and fr.userId = userId;
 
                         SET SQL_SAFE_UPDATES = 1;
 	                COMMIT;
