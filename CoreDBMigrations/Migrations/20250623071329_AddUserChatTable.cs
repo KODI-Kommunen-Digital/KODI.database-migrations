@@ -12,7 +12,7 @@ namespace DatabaseMigrations.Migrations
                     `id` INT AUTO_INCREMENT PRIMARY KEY,
                     `sessionId` INT NOT NULL,
                     `sender` ENUM('user', 'bot') NOT NULL,
-                    `message` TEXT NOT NULL,
+                    `message` JSON NOT NULL,
                     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (`sessionId`) REFERENCES `user_chatbot_sessions`(`id`) ON DELETE CASCADE
                 );
