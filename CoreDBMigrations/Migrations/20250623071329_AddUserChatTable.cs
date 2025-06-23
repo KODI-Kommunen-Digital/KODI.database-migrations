@@ -10,11 +10,11 @@ namespace DatabaseMigrations.Migrations
             string sql = @"
                     CREATE TABLE `user_chatbot_chats` (
                     `id` INT AUTO_INCREMENT PRIMARY KEY,
-                    `session_id` INT NOT NULL,
+                    `sessionId` INT NOT NULL,
                     `sender` ENUM('user', 'bot') NOT NULL,
                     `message` TEXT NOT NULL,
                     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    FOREIGN KEY (`session_id`) REFERENCES `user_chatbot_sessions`(`id`) ON DELETE CASCADE
+                    FOREIGN KEY (`sessionId`) REFERENCES `user_chatbot_sessions`(`id`) ON DELETE CASCADE
                 );
             ";
 
