@@ -10,6 +10,7 @@ namespace CoreDBMigrations.Migrations
             string sql =
                @"
                  ALTER TABLE listings add column isAllDayEvent boolean NOT NULL DEFAULT FALSE;
+                 ALTER TABLE listings add column duration varchar(20) CHECK (duration REGEXP '^[0-9]+[dhm]([0-9]+[dhm])*$');
                 ";
 
             Execute.Sql(sql);
