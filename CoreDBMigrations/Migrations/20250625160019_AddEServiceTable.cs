@@ -14,7 +14,7 @@ namespace DatabaseMigrations.Migrations
                 service VARCHAR(255) NOT NULL,
                 link VARCHAR(512),
                 image VARCHAR(255),
-                service_type ENUM('Deep Link', 'Link') NULL,
+                serviceType ENUM('Deep Link', 'Link') NULL,
                 FOREIGN KEY (parentId) REFERENCES eservices(id) ON DELETE CASCADE
             );";
             Execute.Sql(sql);
