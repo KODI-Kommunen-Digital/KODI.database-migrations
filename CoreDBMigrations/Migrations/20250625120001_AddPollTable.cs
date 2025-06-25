@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20250625093240)]
+    [Migration(20250625120001)]
     public class AddFormChatPollTable : Migration
     {
         public override void Up()
