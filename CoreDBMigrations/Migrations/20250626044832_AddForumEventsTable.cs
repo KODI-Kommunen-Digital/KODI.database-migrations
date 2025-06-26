@@ -11,7 +11,7 @@ namespace DatabaseMigrations.Migrations
                             @"CREATE TABLE `forum_events` (
                 `id` int NOT NULL AUTO_INCREMENT,
                 `userId` int DEFAULT NULL,
-                `fourmId` int DEFAUL NULL,
+                `fourmId` int DEFAULT NULL,
                 `title` varchar(255) DEFAULT NULL,
                 `place` varchar(255) DEFAULT NULL,
                 `description` text,
