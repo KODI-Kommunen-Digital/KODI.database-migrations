@@ -11,6 +11,7 @@ namespace DatabaseMigrations.Migrations
                             @"CREATE TABLE `forum_events` (
                 `id` int NOT NULL AUTO_INCREMENT,
                 `userId` int DEFAULT NULL,
+                `fourmId` int DEFAUL NULL,
                 `title` varchar(255) DEFAULT NULL,
                 `place` varchar(255) DEFAULT NULL,
                 `description` text,
@@ -32,7 +33,8 @@ namespace DatabaseMigrations.Migrations
                 `viewCount` int DEFAULT NULL,
                 PRIMARY KEY (`id`),
                 KEY `userId` (`userId`),
-                FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
+                FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+                FOREIGN KEY (`fourmId`) REFERENCES `forums` (`id`) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
