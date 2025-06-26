@@ -24,7 +24,7 @@ namespace DatabaseMigrations.Migrations
                 `latitude` double DEFAULT NULL,
                 `startDate` datetime DEFAULT NULL,
                 `endDate` datetime DEFAULT NULL,
-                `createdAt` datetime DEFAULT NULL,
+                `createdAt` datetime DEFAULT CURRENT_TIMESTAMP,
                 `pdf` varchar(255) DEFAULT NULL,
                 `expiryDate` datetime DEFAULT NULL,
                 `updatedAt` datetime DEFAULT NULL,
@@ -32,7 +32,7 @@ namespace DatabaseMigrations.Migrations
                 `viewCount` int DEFAULT NULL,
                 PRIMARY KEY (`id`),
                 KEY `userId` (`userId`),
-                FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+                FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
