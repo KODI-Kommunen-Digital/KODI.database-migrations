@@ -12,11 +12,8 @@ namespace CoreDBMigrations.Migrations
                 ALTER TABLE forum_chat
                 MODIFY senderId INT NULL;
 
-                -- 2. Drop the existing FK
-                ALTER TABLE forum_chat
-                DROP FOREIGN KEY forum_chat_ibfk_1;
 
-                -- 3. Add FK with ON DELETE SET NULL
+                -- 2. Add FK with ON DELETE SET NULL
                 ALTER TABLE forum_chat
                 ADD CONSTRAINT fk_forum_chat_sender
                 FOREIGN KEY (senderId) REFERENCES users(id) ON DELETE SET NULL;
