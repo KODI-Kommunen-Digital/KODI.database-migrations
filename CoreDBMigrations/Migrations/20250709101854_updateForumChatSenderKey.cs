@@ -18,6 +18,7 @@ namespace CoreDBMigrations.Migrations
 
                 -- 3. Add FK with ON DELETE SET NULL
                 ALTER TABLE forum_chat
+                ADD CONSTRAINT fk_forum_chat_sender
                 FOREIGN KEY (senderId) REFERENCES users(id) ON DELETE SET NULL;
             ";
 
