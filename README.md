@@ -86,5 +86,5 @@ Example commands
 ```bash
 dotnet run dbtype=city
 dotnet run migrate=up
-dotnet run migrate=down dbType=core targetVersion=6789987766289
+dotnet run migrate=down dbType=core targetVersion=20250305143733
 ```
