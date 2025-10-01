@@ -3,12 +3,12 @@ using FluentMigrator;
 namespace CoreDBMigrations.Migrations
 {
     [Migration(20251001093543)]
-    public class AddScheduledTimeInListings : Migration
+    public class AddScheduledAtInListings : Migration
     {
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE listings ADD scheduledTime DATETIME;";
+               @"ALTER TABLE listings ADD scheduledAt DATETIME;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace CoreDBMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE listings DROP COLUMN scheduledTime;";
+               @"ALTER TABLE listings DROP COLUMN scheduledAt;";
 
             Execute.Sql(sql);
         }
