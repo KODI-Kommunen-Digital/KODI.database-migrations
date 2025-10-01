@@ -1,0 +1,24 @@
+using FluentMigrator;
+
+namespace CoreDBMigrations.Migrations
+{
+    [Migration(20251001093543)]
+    public class AddScheduledTimeInListings : Migration
+    {
+        public override void Up()
+        {
+            string sql =
+               @"ALTER TABLE listings ADD scheduledTime DATETIME;";
+
+            Execute.Sql(sql);
+        }
+
+        public override void Down()
+        {
+            string sql =
+               @"ALTER TABLE listings DROP COLUMN scheduledTime;";
+
+            Execute.Sql(sql);
+        }
+    }
+}
