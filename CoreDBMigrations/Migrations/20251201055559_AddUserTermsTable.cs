@@ -14,7 +14,7 @@ namespace CoreDBMigrations.Migrations
                     version_accepted INT NOT NULL,
                     accepted_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                     UNIQUE KEY (device_id, version_accepted),
-                    FOREIGN KEY (version_accepted) REFERENCES privacy_policy(version)
+                    FOREIGN KEY (version_accepted) REFERENCES terms(version)
                     );
                 ";
             Execute.Sql(sql);
