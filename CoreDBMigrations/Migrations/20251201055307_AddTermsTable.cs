@@ -8,7 +8,7 @@ namespace CoreDBMigrations.Migrations
         public override void Up()
         {
             string sql = @"
-                    CREATE TABLE privacy_policy (
+                    CREATE TABLE terms (
                     id BIGINT AUTO_INCREMENT PRIMARY KEY,
                     version INT NOT NULL UNIQUE,
                     content LONGTEXT,
@@ -22,7 +22,7 @@ namespace CoreDBMigrations.Migrations
         public override void Down()
         {
            string sql =
-               @"DROP TABLE IF EXISTS privacy_policy";
+               @"DROP TABLE IF EXISTS terms";
             Execute.Sql(sql);
         }
     }
