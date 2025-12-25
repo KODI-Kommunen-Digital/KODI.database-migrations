@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 DatabaseMigrations/App.config
+
+.DS_Store
