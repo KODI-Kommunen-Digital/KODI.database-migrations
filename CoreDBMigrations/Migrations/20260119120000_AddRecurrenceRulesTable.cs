@@ -17,6 +17,7 @@ namespace DatabaseMigrations.Migrations
                 weekdays JSON DEFAULT NULL,
                 startTime TIME NOT NULL,
                 endTime TIME NOT NULL,
+                dayOffset INT DEFAULT 0,
                 createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 updatedAt DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
                 FOREIGN KEY (listingId) REFERENCES listings(id) ON DELETE CASCADE
