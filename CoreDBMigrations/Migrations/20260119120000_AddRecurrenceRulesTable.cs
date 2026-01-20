@@ -18,6 +18,7 @@ namespace DatabaseMigrations.Migrations
                 startTime TIME NOT NULL,
                 endTime TIME NOT NULL,
                 dayOffset INT DEFAULT 0,
+                dayOrdinal INT DEFAULT NULL,
                 createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 updatedAt DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
                 FOREIGN KEY (listingId) REFERENCES listings(id) ON DELETE CASCADE
